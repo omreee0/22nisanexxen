@@ -1,0 +1,31 @@
+{% extends "index.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- navbar -->
+{% include "_navbar.html" %}
+{% block content %}
+
+<div class="container py-5">
+    <form method="POST" class="w-50 m-auto text-white p-3">
+        {% csrf_token %}
+        <h2 class="text-white text-center fw-bold">Kullanıcı Giriş Formu</h2>
+        <div class="mb-3">
+            <input type="text" name='username' class="form-control form-control-lg" placeholder="E-posta veya telefon numarası">
+            <input type="password" name="password" id="" placeholder="Şifre" class="form-control form-control-lg mt-5">
+        </div>
+
+        <button class="btn btn-danger btn-lg" type="submit">Oturum Aç</button>
+
+    </form>
+</div>
+
+{% endblock content %}
+</body>
+</html>
